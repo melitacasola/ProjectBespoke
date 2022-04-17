@@ -1,0 +1,41 @@
+{% extends "AppBespoke/padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+
+    <!--Aquí va lo que cambia, y lo asociado a está vista :) -->
+    <h1>BESPOKE Bike- Stock</h1>
+  
+
+    <h3>Podes buscar Producto:</h3>
+
+    <form action="/AppBespoke/buscar/" method="GET">
+
+        <input type="text" name="nombre" id="nombre">
+
+        <input type="submit" value="Buscar">
+
+
+
+
+    </form>
+   
+
+    {% if nombre %}
+
+    <p>Estamos buscando el Producto: {{nombre}}</p>
+
+    <ul>
+	{% for nom in nombre %}
+		<li> {{nom.stock}} </li>
+		<li> {{nom.stock}} </li>
+        <li> {{nom.pedido}} </li> 
+	{% endfor %}
+
+    </ul>
+
+    {% endif %}
+
+{% endblock %}

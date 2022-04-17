@@ -1,0 +1,28 @@
+{% extends "AppBespoke/padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+
+    <!--Aquí va lo que cambia, y lo asociado a está vista :) -->
+    <h1>Formulario - Editar PRODUCTOS</h1>
+    
+    {% if miFormulario.errors %}
+
+    <p style="color: red;"> Están mal los datos, revisar</p>
+
+    {% endif %}
+
+
+    <form action="/AppBespoke/buscar/" method="GET">{% csrf_token %}
+
+        <!-- Acá está la magia de Django-->
+        
+        <input type="text" name="nombre" id="nombre">
+        <input type="submit" value="Buscar">
+    </form>
+
+  
+
+{% endblock %}

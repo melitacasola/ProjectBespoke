@@ -30,7 +30,7 @@ class Vidriera(models.Model):
     def __str__(self):
         return f"Nombre: {self.nombre} - Stock {self.stock} - Pedido {self.pedido}"
         
-class Otro(models.Model):
+class Otros(models.Model):
     nombre= models.CharField(max_length=30)
     stock = models.IntegerField()
     pedido= models.BooleanField()

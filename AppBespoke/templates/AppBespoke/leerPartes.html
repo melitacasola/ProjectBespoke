@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VER PARTES</title>
+</head>
+<body>
+    
+    {% for p in partes %}
+
+        <li>{{p}}</li>
+        <button>
+            <a href="{% url 'EliminarPartes' p.nombre %}"> Eliminar</a>
+            <a href="{% url 'EditarPartes' p.nombre %}"> Editar</a>
+
+        </button>
+
+    {% endfor %}
+    <br>
+    <br>
+    <a href="partes">Agregar Producto</a> <!--link nos re dirige a profesores.html-->
+</body>
+</html>
